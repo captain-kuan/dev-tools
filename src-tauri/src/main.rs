@@ -3,21 +3,17 @@
     windows_subsystem = "windows"
 )]
 
+use dev_tools::server;
 use tauri::api::shell;
 use tauri::{CustomMenuItem, Manager, Menu, Submenu};
-
-#[tauri::command]
-fn backend_add(number: i32) -> i32 {
-    // Note: these commands block the main thread and hang the UI until they return.
-    // If you need to run a long-running task, use async command instead.
-    println!("Backend was called with an argument: {}", number);
-    number + 2
-}
 
 fn main() {
     let ctx = tauri::generate_context!();
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![backend_add])
+        .invoke_handler(tauri::generate_handler![
+            server::base64::encode,
+            server::base64::decode
+        ])
         .menu(
             tauri::Menu::os_default("Tauri Vue Template").add_submenu(Submenu::new(
                 "Help",

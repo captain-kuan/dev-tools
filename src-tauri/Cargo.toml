@@ -1,11 +1,11 @@
 [package]
-name = "tauri_vue_template"
+name = "dev-tools"
 version = "0.1.0"
 description = "A Tauri App"
-authors = ["Ville Säävuori"]
+authors = ["captain-kuan"]
 license = "MIT"
-repository = "https://github.com/Uninen/tauri-vue-template"
-default-run = "tauri_vue_template"
+repository = "https://github.com/captain-kuan/dev-tools.git"
+default-run = "dev-tools"
 edition = "2021"
 rust-version = "1.57"
 
@@ -18,6 +18,7 @@ tauri-build = { version = "1.2.1", features = [] }
 serde_json = "1.0.91"
 serde = { version = "1.0.152", features = ["derive"] }
 tauri = { version = "1.2.3", features = ["api-all"] }
+base64 = "0.21.0"
 
 [features]
 # by default Tauri runs in production mode
