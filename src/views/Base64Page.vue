@@ -1,9 +1,13 @@
 <template>
-  <button @click="encode">编码</button>
-  <button @click="decode">解码</button>
-  <div class="flex-1 flex">
-    <code-editor v-model="origin"></code-editor>
-    <code-editor v-model="base64"></code-editor>
+  <div class="flex-1 flex h-full">
+    <div class="flex-1 flex flex-col">
+      <button @click="encode">编码</button>
+      <code-editor v-model="origin"></code-editor>
+    </div>
+    <div class="flex-1 flex flex-col">
+      <button @click="decode">解码</button>
+      <code-editor v-model="base64"></code-editor>
+    </div>
   </div>
 </template>
 
@@ -18,7 +22,11 @@ async function encode() {
   base64.value = (await invoke("encode", { input: origin.value })) as string;
 }
 async function decode() {
-  origin.value = (await invoke("decode", { input: base64.value })) as string;
+ const res= (await invoke("decode", { input: base64.value }).catch((e) => {
+    console.log(e);
+  })) as string;
+  console.log(res);
+  origin.value =res  
 }
 </script>
 

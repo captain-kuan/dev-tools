@@ -1,7 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: "CascadiaCode";
+  src: url("../font/CascadiaCode.ttf");
+}
 html {
   @apply text-[14px] text-zinc-200 bg-zinc-800;
   font-synthesis: none;
@@ -9,6 +12,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  font-family: "CascadiaCode";
 }
 
 *,
