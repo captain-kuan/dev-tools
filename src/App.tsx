@@ -12,14 +12,20 @@ function App() {
   }
 
   return (
-    <div className=" h-screen bg-slate-950 text-white flex flex-col">
-      <nav className="py-3 px-4 flex items-center justify-between">
+    <div className=" h-screen bg-slate-950 flex flex-col">
+      <nav className="py-3 px-4 flex items-center justify-between ">
         <MInput value={search} onChange={setSearch} />
-        <div>
-          <a href="/json">JSON</a>|
+        <div className=" text-white ">
+          <a className="p-1" href="/json">
+            json
+          </a>
+          |
+          <a className="p-1" href="/benchmark">
+            benchmark
+          </a>
         </div>
       </nav>
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 rounded-xl flex flex-col mt-0 m-3 p-2 bg-slate-900">
         <Outlet />
       </div>
     </div>

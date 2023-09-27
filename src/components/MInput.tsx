@@ -6,7 +6,7 @@ function MInput(props: {
   const { value, onChange, type = "text" } = props;
   return (
     <input
-      className=" bg-slate-800 outline-none text-gray-100"
+      className="w-full rounded px-2 py-1 bg-slate-800 outline-none text-gray-100"
       type={type}
       value={value}
       onChange={(e) => {
